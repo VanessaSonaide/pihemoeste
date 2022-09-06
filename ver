@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver</title>
+</head>
+<body>
+    <div class="head">
+        <img class="img-read" src="{{asset('img-resource/hemoeste.png')}}">
+    </div>
+    <ul> 
+    @foreach ($users as $item)
+        <li>
+        
+            <b><p>ID:</p></b>
+                <p>{{$item->id}}</p>
+            <b><p>Nome:</p></b>   
+                <p> {{$item->name}}</p>
+            <b><p>Email:</p></b>  
+                <p> {{$item->email}}</p>
+            <b><p>CPF:</p></b> 
+                <p> {{$item->cpf}}</p>
+            <b><p>Cartão SUS:</p></b> 
+                <p> {{$item->sus}}</p>
+            <b><p>Tipo sanguíneo:</p></b> 
+                <p> {{$item->tipo}}</p>
+        </li>
+    @endforeach
+    </ul>
+
+    <form action="{{url('/editar')}}" method="GET">
+        @csrf
+        <button>Editar perfil</button>
+    </form>
+</body>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #710C04;
+        color: #d3d3d3;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    .head{
+        background-color: #d3d3d3;
+    }
+    .img-read{
+        padding: 10px;
+        height: 100px;
+    }
+    button{
+        background-color: #d3d3d3;
+        font-weight: bold;
+        color: #710C04;
+        height: 30px;
+        border: solid 1px #d3d3d3;
+        border-radius: 7px;
+        margin: 15px;
+    }
+</style>
+</html>
