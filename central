@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><div class="head">
+        <img class="img-read" src="{{asset('img-resource/hemoeste.png')}}">
+    </div>
+    <div class="box">
+        <h1>Central do Doador</h1>
+
+        <form action="{{url('/ver')}}" method="POST">
+            @csrf
+            <button>Ver perfil</button>
+        </form>
+
+        <form action="{{url('/doacao')}}" method="GET">
+            @csrf
+            <button>Solicitar Doação</button>
+        </form>
+
+        <form action="{{url('logout')}}" method="POST">
+            @csrf
+            <button>Sair</button>
+    </div>
+    </form></center>
+</body>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #710C04;
+        color: #d3d3d3;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    .head{
+        background-color: #d3d3d3;
+    }
+    .img-read{
+        padding: 10px;
+        height: 100px;
+    }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #710C04;
+        color: #d3d3d3;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    button{
+        background-color: #710C04;
+        font-weight: bold;
+        color: #d3d3d3;
+        height: 30px;
+        border: solid 1px #710C04;
+        border-radius: 7px;
+        margin: 7px;
+    }
+    .box{
+        font-weight: bold;
+        display: block;
+        background-color: #d3d3d3;
+        color: #710C04;
+        border: 50px;
+        height: 250px;
+        width: 300px;
+        border-radius: 14px;
+        padding: 15px;
+        margin: 50px;
+    }
+</style>
+</html>
